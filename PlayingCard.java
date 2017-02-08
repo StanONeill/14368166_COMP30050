@@ -46,12 +46,11 @@ public class PlayingCard {
 		return card.type;
 	}
 	
-	// returrns the suit of the card passsed as an argument 
+	// returns the suit of the card passsed as an argument 
 	public static char getSuit(PlayingCard card){
 		return card.suit;
 	}
 }	
-	// Creates the deck of cards unshuffled
 	
 	
 	

@@ -42,17 +42,8 @@ class DeckOfCards {
 	}
 		return deck;
 }
-//	(public String toString(){
-//		int i =0;
-//		String string = "";
-//		for(i = 0; i < 52; i++){
-//			PlayingCard card = deck.get(i);
-//			string += card + "\n";
-//		}
-//		
-//		return string; 
-//	}
 	
+	// Swaps the position of 2 random cards 52*52 times
 	public static void shuffle(){
 		int i = 0, j, k;
 		PlayingCard temp = new PlayingCard(0, 0, "A", 'A');
@@ -67,13 +58,14 @@ class DeckOfCards {
 			i++;
 		}
 	}
-	
+	//creates a new deck shuffles it and clears the discarded array
 	public static void reset(){
 		deck = createDeck();
 		shuffle();
 		discarded.clear();
 	}
 	
+	// deals the next playincard in the deck
 	public static PlayingCard dealNext(){
 		if(next > 50){
 			System.out.println("Deck is out of cards");
@@ -83,6 +75,7 @@ class DeckOfCards {
 		return deck.get(next);
 	}
 	
+	// method to add a Playing Card Object to the discarded arraylist
 	public static void returnCard(PlayingCard used){
 		discarded.add(used);
 	}
