@@ -29,7 +29,6 @@ public class PlayingCard {
 		String string = "";
 		string += getType(card);
 		string += getSuit(card);
-		
 		return string;
 	}
 	

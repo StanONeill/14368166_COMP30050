@@ -7,7 +7,7 @@ class DeckOfCards {
 	
 	
 	private static ArrayList<PlayingCard> deck = new ArrayList<>();
-	
+	private static int next = -1;
 	private static ArrayList<PlayingCard> discarded = new ArrayList<>();
 	
 	public static ArrayList<PlayingCard> createDeck(){
@@ -42,6 +42,16 @@ class DeckOfCards {
 	}
 		return deck;
 }
+//	(public String toString(){
+//		int i =0;
+//		String string = "";
+//		for(i = 0; i < 52; i++){
+//			PlayingCard card = deck.get(i);
+//			string += card + "\n";
+//		}
+//		
+//		return string; 
+//	}
 	
 	public static void shuffle(){
 		int i = 0, j, k;
@@ -62,6 +72,19 @@ class DeckOfCards {
 		deck = createDeck();
 		shuffle();
 		discarded.clear();
+	}
+	
+	public static PlayingCard dealNext(){
+		if(next > 50){
+			System.out.println("Deck is out of cards");
+			return null;
+		}
+		next++;
+		return deck.get(next);
+	}
+	
+	public static void returnCard(PlayingCard used){
+		discarded.add(used);
 	}
 
 }

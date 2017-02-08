@@ -24,6 +24,18 @@ public class Main {
 			String string = PlayingCard.toString(card);
 			System.out.println(string);
 		}
+		DeckOfCards.reset();
+		System.out.println("Reset pack of cards");
+		for(i = 0; i < 52; i++){
+			PlayingCard card = Deck.get(i);
+			String string = PlayingCard.toString(card);
+			System.out.println(string);
+		}
+		System.out.println("The next card to be dealt is: \n");
+		PlayingCard next = DeckOfCards.dealNext();
+		String string = PlayingCard.toString(next);
+		System.out.println(string);
+		DeckOfCards.returnCard(next);
 	}
 }
 
