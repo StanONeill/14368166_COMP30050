@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.Random;
 import java.util.ArrayList;
 
-public class PlayingCard {
+public class PlayingCard implements Comparable<PlayingCard>{
 	
 	// Initial Declaration of Variables
 	static public final char HEARTS = 'H';
@@ -25,10 +25,10 @@ public class PlayingCard {
 	}
 	
 	// Takes a card object and makes a string of it's type and suit
-	public static String toString(PlayingCard card){
+	public String toString(){
 		String string = "";
-		string += getType(card);
-		string += getSuit(card);
+		string += this.getType();
+		string += this.getSuit();
 		return string;
 	}
 	
@@ -42,13 +42,22 @@ public class PlayingCard {
 	}
 	
 	// returns the type of the card passed as an argument 
-	public static String getType(PlayingCard card){
-		return card.type;
+	public String getType(){
+		return this.type;
 	}
 	
 	// returns the suit of the card passsed as an argument 
-	public static char getSuit(PlayingCard card){
-		return card.suit;
+	public char getSuit(){
+		return this.suit;
+	}
+
+	@Override
+	public int compareTo(PlayingCard card) {
+		
+	Integer a = this.gameValue;
+	Integer b = card.gameValue;
+		
+	return a.compareTo(b);
 	}
 }	
 	
