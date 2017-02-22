@@ -62,14 +62,16 @@ class DeckOfCards {
 	public static void reset(){
 		deck = createDeck();
 		shuffle();
+		next =0;
 		discarded.clear();
 	}
 	
-	// deals the next playincard in the deck
+	// deals the next playingcard in the deck
 	public static PlayingCard dealNext(){
 		if(next > 50){
-			System.out.println("Deck is out of cards");
-			return null;
+			reset();
+			next++;
+			return deck.get(next);
 		}
 		next++;
 		return deck.get(next);
